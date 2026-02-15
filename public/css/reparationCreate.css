@@ -1,0 +1,149 @@
+html { font-size: 16px; }
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.container-rep {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-header-rep {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-title-rep {
+    color: #ffffff;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+.page-title-rep span { color: #f97316; }
+
+.form-rep {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2rem;
+}
+
+.form-rep label {
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.form-rep input, .form-rep select, .form-rep textarea {
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-rep button {
+    background: #f97316;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.form-rep button:hover { background: #ea580c; }
+
+.link-rep {
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+/* reparationCreate.css - inspiré de vehiculeCreate.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.container-rep {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 2rem;
+}
+
+.page-header-rep {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.page-title-rep {
+    color: #0f172a;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-rep {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-rep input, .form-rep select, .form-rep textarea {
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+}
+
+.form-rep button {
+    background: #f97316;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-rep button:hover {
+    background: #ea580c;
+}
+
+.link-rep {
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+}

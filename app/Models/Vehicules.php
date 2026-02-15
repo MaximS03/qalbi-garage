@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Vehicules extends Model
+{
+    protected $fillable = [
+        "immatriculation",
+        "marque",
+        "modele",
+        "couleur",
+        "annee",
+        "kilometrage",
+        "carrosserie",
+        "energie",
+        "boite"
+    ];
+
+    public function reparations()
+    {
+        return $this->hasMany(\App\Models\Reparation::class, 'vehicule_id');
+    }
+}
