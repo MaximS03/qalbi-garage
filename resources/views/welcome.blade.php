@@ -11,7 +11,7 @@
 
 <header>
     <nav class="nav">
-        <h1><span>QALBI</span> AutoCare</h1>
+        <h1><span>QALBI</span> AutCare</h1>
         <ul>
             <li><a href="#services" class="nav-link">Services</a></li>
             <li><a href="#conseils" class="nav-link">Conseils Auto</a></li>
