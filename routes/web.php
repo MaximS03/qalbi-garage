@@ -82,7 +82,7 @@ Route::get('/reparation/details/{reparation}', [ReparationController::class, "de
 // Route pour le tableau de bord
 Route::get('/dashboard', function () {
     $vehicules = \App\Models\Vehicules::count();
-    $techniciens = \App\Models\technicien::count();
+    $techniciens = \App\Models\Technicien::count();
     $reparations = \App\Models\Reparation::count();
 
     $latestReparations = \App\Models\Reparation::with(['vehicule', 'technicien'])
