@@ -1,6 +1,3 @@
-
-
-
 <?php
 // Route pour la prise de rendez-vous
 
@@ -13,6 +10,7 @@ use App\Http\Controllers\ReparationController;
 use App\Http\Controllers\TechnicienController;
 use App\Http\Controllers\VehiculesController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('/reservation', function () {
     return view('reservation');
@@ -49,7 +47,7 @@ Route::put('/vehicule/update/{vehicule}', [VehiculesController::class, "update"]
 Route::delete('/vehicule/delete/{vehicule}', [VehiculesController::class, "destroy"])->name("vehicules.delete");
 
 // route pour afficher les détails d'un véhicule
-Route::get('/vehicule/detail/{vehicule}', [VehiculesController::class,"detail"])->name("vehicules.detail");
+Route::get('/vehicule/detail/{vehicule}', [VehiculesController::class, "detail"])->name("vehicules.detail");
 
 // route pour afficher le formulaire d'ajout d'un technicien
 Route::get('/technicien/create', [TechnicienController::class, "create"])->name("techniciens.create");
@@ -102,6 +100,20 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect()->route('welcome');
 })->name('logout');
+
+
+// Route temporaire pour forcer le nettoyage du cache et les migrations sans terminal
+Route::get('/force-fix-419', function () {
+    try {
+        Artisan::call('config:clear');
+        Artisan::call('route:clear');
+        Artisan::call('view:clear');
+        Artisan::call('migrate --force');
+        return "Succès : Caches nettoyés et migrations effectuées ! Tentez de vous connecter maintenant.";
+    } catch (\Exception $e) {
+        return "Erreur lors de l'exécution des commandes : " . $e->getMessage();
+    }
+});
 
 
 
