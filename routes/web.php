@@ -10,7 +10,6 @@ use App\Http\Controllers\ReparationController;
 use App\Http\Controllers\TechnicienController;
 use App\Http\Controllers\VehiculesController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
 
 Route::get('/reservation', function () {
     return view('reservation');
@@ -100,20 +99,6 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect()->route('welcome');
 })->name('logout');
-
-
-// Route temporaire pour forcer le nettoyage du cache et les migrations sans terminal
-Route::get('/force-fix-419', function () {
-    try {
-        Artisan::call('config:clear');
-        Artisan::call('route:clear');
-        Artisan::call('view:clear');
-        Artisan::call('migrate --force');
-        return "Succès : Caches nettoyés et migrations effectuées ! Tentez de vous connecter maintenant.";
-    } catch (\Exception $e) {
-        return "Erreur lors de l'exécution des commandes : " . $e->getMessage();
-    }
-});
 
 
 

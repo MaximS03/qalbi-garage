@@ -11,12 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->trustProxies(at: '*');
-
-        $middleware->validateCsrfTokens(except: [
-            'connexion',
-            'inscription'
-        ]);
+        //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
