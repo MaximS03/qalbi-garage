@@ -3,9 +3,7 @@
 
 <?php
 // Route pour la prise de rendez-vous
-Route::get('/reservation', function () {
-    return view('reservation');
-})->name('reservation');
+
 
 
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +13,10 @@ use App\Http\Controllers\ReparationController;
 use App\Http\Controllers\TechnicienController;
 use App\Http\Controllers\VehiculesController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/reservation', function () {
+    return view('reservation');
+})->name('reservation');
 
 Route::get('/', function () {
     return view('welcome');
