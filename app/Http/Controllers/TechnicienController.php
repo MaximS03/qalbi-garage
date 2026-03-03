@@ -43,6 +43,7 @@ class TechnicienController extends Controller
         $data = $request->validate([
             'nom'        => 'required|string',
             'prenom'     => 'required|string',
+            'numero'     => 'required|string',
             'specialite' => 'nullable|string'
         ]);
 

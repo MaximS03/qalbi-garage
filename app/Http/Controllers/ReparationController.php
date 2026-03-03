@@ -18,6 +18,14 @@ class ReparationController extends Controller
         $reparations = Reparation::with(['vehicule', 'technicien'])->get();
         return view('reparation.listReparation', compact('reparations'));
     }
+        /**
+         * Afficher la liste des réparations (route index)
+         */
+        public function index()
+        {
+            $reparations = Reparation::with(['vehicule', 'technicien'])->get();
+            return view('reparation.listReparation', compact('reparations'));
+        }
 
     /**
      * Show the form for creating a new resource.

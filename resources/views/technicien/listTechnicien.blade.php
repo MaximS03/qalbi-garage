@@ -47,6 +47,10 @@
                 </table>
             </div>
         </div>
+        <!-- Bouton retour au dashboard -->
+        <div style="margin-top: 20px; text-align: center;">
+            <a href="{{ route('dashboard') }}" class="btn1" style="background-color: #f97316; color: white; padding: 10px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">Retour au dashboard</a>
+        </div>
     </div>
 </body>
 

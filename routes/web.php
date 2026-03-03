@@ -1,7 +1,4 @@
 <?php
-// Route pour la prise de rendez-vous
-
-
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ConnexionController;
@@ -10,6 +7,7 @@ use App\Http\Controllers\ReparationController;
 use App\Http\Controllers\TechnicienController;
 use App\Http\Controllers\VehiculesController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/reservation', function () {
     return view('reservation');
@@ -46,14 +44,13 @@ Route::put('/vehicule/update/{vehicule}', [VehiculesController::class, "update"]
 Route::delete('/vehicule/delete/{vehicule}', [VehiculesController::class, "destroy"])->name("vehicules.delete");
 
 // route pour afficher les détails d'un véhicule
-Route::get('/vehicule/detail/{vehicule}', [VehiculesController::class, "detail"])->name("vehicules.detail");
+Route::get('/vehicule/detail/{vehicule}', [VehiculesController::class,"detail"])->name("vehicules.detail");
 
 // route pour afficher le formulaire d'ajout d'un technicien
 Route::get('/technicien/create', [TechnicienController::class, "create"])->name("techniciens.create");
 
 // route pour afficher la liste des techniciens
-Route::get('/technicien/list', [TechnicienController::class, "index"])->name("techniciens.show");
-
+Route::get('/technicien/list', [TechnicienController::class, "show"])->name("techniciens.show");
 // route pour stocker les données d'un technicien
 Route::post('/technicien/store', [TechnicienController::class, "store"])->name("techniciens.store");
 
@@ -65,11 +62,15 @@ Route::delete('/technicien/delete/{technicien}', [TechnicienController::class, "
 
 Route::get('/technicien/details/{technicien}', [TechnicienController::class, "details"])->name("techniciens.details");
 
+Route::get('/technicien', [TechnicienController::class, "index"])->name("techniciens.index");
+
 Route::get('/reparation/create', [ReparationController::class, "create"])->name("reparations.create");
 
 Route::post('/reparation/store', [ReparationController::class, "store"])->name("reparations.store");
 
 Route::get('/reparation/list', [ReparationController::class, "show"])->name("reparations.show");
+
+Route::get('/reparation', [ReparationController::class, "index"])->name("reparations.index");
 
 Route::get('/reparation/edit/{reparation}', [ReparationController::class, "edit"])->name("reparations.edit");
 
@@ -99,6 +100,3 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect()->route('welcome');
 })->name('logout');
-
-
-

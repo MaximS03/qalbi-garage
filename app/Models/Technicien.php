@@ -14,4 +14,8 @@ class technicien extends Model
         'numero',
         'specialite',
     ];
+        public function reparations()
+        {
+            return $this->hasMany(Reparation::class, 'technicien_id');
+        }
 }
